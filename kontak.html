@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak Saya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="dark-mode-toggle">🌙</button>
+    
+    <header>
+        <h1>Hubungi Saya</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="portofolio.html" target="_top">Portofolio</a></li>
+                <li><a href="kontak.html" target="_top">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="content-grid">
+            <div class="contact-card">
+                <div class="contact-header">
+                    <i class="fas fa-address-book"></i> Informasi Kontak
+                </div>
+                <div class="contact-content">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h3>Telepon</h3>
+                            <p>081228928194</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h3>Email</h3>
+                            <p>sulthandzulfadly37@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h3>Instagram</h3>
+                            <p>@satyaakmal_</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-media">
+                        <a href="https://instagram.com/satyaakmal_" class="social-link" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="mailto:sulthandzulfadly37@gmail.com" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="tel:081228928194" class="social-link">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="location-map">
+                        <i class="fas fa-map-marked-alt" style="font-size: 48px; color: #0088cc;"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-card">
+                <div class="form-header">
+                    <i class="fas fa-paper-plane"></i> Formulir Kontak
+                </div>
+                <div class="form-content">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subjek</label>
+                            <input type="text" id="subject" name="subject" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Pesan</label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Kirim Pesan
+                        </button>
+                    </form>
+                    
+                    <div class="success-message" id="success-message">
+                        Pesan berhasil dikirim! Terima kasih telah menghubungi saya.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; Satya Akmal Dzaki Muammar</p>
+    </footer>
+
+    <script>
+        // Toggle dark mode
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                darkModeToggle.textContent = '☀️';
+            } else {
+                darkModeToggle.textContent = '🌙';
+            }
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contact-form');
+        const successMessage = document.getElementById('success-message');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Simulasi pengiriman form
+            setTimeout(() => {
+                contactForm.reset();
+                successMessage.style.display = 'block';
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 5000);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
